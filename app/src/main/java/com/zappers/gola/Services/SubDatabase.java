@@ -1,4 +1,4 @@
-package com.zappers.gola;
+package com.zappers.gola.Services;
 
 import android.content.ContentValues;
 import android.content.Context;

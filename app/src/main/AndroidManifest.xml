@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zappers.gola">
+
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -10,20 +11,20 @@
         android:supportsRtl="true"
         android:theme="@style/GolaTheme">
         <activity
-            android:name=".SplashScreen"
+            android:name=".Activities.SplashScreen"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/GolaTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
 
 
             </intent-filter>
@@ -38,15 +39,23 @@
             android:label="@string/app_name">
 
         </activity>
-        <activity android:name=".NewUser"/>
-        <service android:name=".MyService"/>
+        <activity
+            android:name=".Activities.NewUser"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".Activities.MarkAttendance"
+            android:label="@string/app_name">
+        </activity>
+
+        <service android:name=".Services.MyService" />
         <receiver
-            android:name=".BootReceiver"
+            android:name=".Models.BootReceiver"
             android:enabled="true"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 

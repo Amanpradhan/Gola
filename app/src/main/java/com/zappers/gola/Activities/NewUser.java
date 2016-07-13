@@ -1,6 +1,7 @@
-package com.zappers.gola;
+package com.zappers.gola.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,9 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.zappers.gola.R;
+import com.zappers.gola.Fragments.SemDialog;
 
 /**
  * Created by akriti on 13/7/16.
@@ -162,14 +166,29 @@ public class NewUser extends AppCompatActivity implements View.OnClickListener {
             flag2 = 1;
         }
         Log.d("Gola", " initialized name and semester");
-        if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 1 && flag5 == 1 && flag6 == 1)
+        no_working_weekly = work_days.getCheckedRadioButtonId() + 5;
+        if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 1 && flag5 == 1 && flag6 == 1){
+            bundle.putString("USERNAME",user_name);
+            bundle.putInt("USERSEM",user_sem);
+            bundle.putInt("NOOFCLASSES",no_classes_daily);
+            bundle.putInt("DURATION",duration_each_class);
+            bundle.putInt("WEEKLYWORKDAYS",no_working_weekly);
+            bundle.putInt("TIMEHRS",start_hrs);
+            bundle.putInt("TIMEMIN",start_min);
+            bundle.putInt("MEREDIAN",meredian);
+            Intent intent = new Intent(this,MainActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
             finish();
+
+        }
+
         else {
             SemDialog semDialog = new SemDialog();
             semDialog.show(getSupportFragmentManager(), "Invalid account");
 
         }
-        no_working_weekly = work_days.getCheckedRadioButtonId() + 5;
+
     }
 
     @Override

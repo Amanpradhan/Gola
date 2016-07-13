@@ -49,4 +49,11 @@
         <item>AM</item>
         <item>PM</item>
     </string-array>
+    <string-array name="mark_attendance">
+        <item>Attended</item>
+        <item>Bunk</item>
+        <item>Break</item>
+        <item>Suspended</item>
+        <item>Mass Bunk</item>
+    </string-array>
 </resources>

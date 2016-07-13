@@ -1,8 +1,10 @@
-package com.zappers.gola;
+package com.zappers.gola.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.zappers.gola.R;
 
 /**
  * Created by Administrator on 10-02-2016.

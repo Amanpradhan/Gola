@@ -1,8 +1,10 @@
-package com.zappers.gola;
+package com.zappers.gola.Models;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+
+import com.zappers.gola.Services.MyService;
 
 /**
  * Created by Administrator on 10-02-2016.
