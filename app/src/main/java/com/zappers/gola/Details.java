@@ -1,9 +1,7 @@
 package com.zappers.gola;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,16 +18,16 @@ public class Details extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details);
-        et1= (EditText)findViewById(R.id.et1);
+        /*et1= (EditText)findViewById(R.id.et1);
         et2= (EditText)findViewById(R.id.et2);
         et3= (EditText)findViewById(R.id.et3);
         et4=(EditText)findViewById(R.id.et4);
         submit=(Button)findViewById(R.id.submit);
-        submit.setOnClickListener(this);
+        submit.setOnClickListener(this);*/
 
     }
     public void onClick(View view) {
-        if (view.getId() == R.id.submit) {
+        /*if (view.getId() == R.id.submit) {
             String s1, s2, s3, s4;
             s1 = et1.getText().toString();
             s2 = et2.getText().toString();
@@ -47,5 +45,5 @@ public class Details extends AppCompatActivity implements View.OnClickListener {
             intent.putExtras(bundle);
             startActivity(intent);
         }
-    }
-}
+    }*/
+}}

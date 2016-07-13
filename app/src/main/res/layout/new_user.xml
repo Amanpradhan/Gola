@@ -1,175 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            android:title="Gola"/>
+            android:title="Gola" />
+
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:hint="Please enter your name"
-            android:padding="5dp"
-            android:layout_margin="5dp"
-            android:layout_gravity="center"
             android:inputType="text"
-            android:singleLine="true"/>
+            android:padding="5dp"
+            android:singleLine="true" />
+
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/sem"
-            android:hint="Your semester"
-            android:padding="5dp"
-            android:layout_margin="5dp"
-            android:layout_gravity="center"
-            android:inputType="number"
-            android:singleLine="true"/>
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/l1"
-            android:padding="5dp"
+            android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:orientation="horizontal">
+            android:hint="Your semester"
+            android:inputType="number"
+            android:padding="5dp"
+            android:singleLine="true" />
+
+        <LinearLayout
+            android:id="@+id/l1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
             <TextView
+                android:id="@+id/tv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv1"
-                android:padding="5dp"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp"
                 android:text="Number of classes(daily)"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
             <Spinner
+                android:id="@+id/no_classes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/no_classes"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/l2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/l2"
-            android:padding="5dp"
             android:layout_margin="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
+
             <TextView
+                android:id="@+id/tv2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv2"
-                android:padding="5dp"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp"
                 android:text="Start time (HH:MM)"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_weight="1"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal">
+
                 <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/hrs"
-                    android:layout_weight="1"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
 
                 <Spinner
+                    android:id="@+id/min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/min"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/merdn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                </Spinner>
 
             </LinearLayout>
 
 
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/l3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/l3"
-            android:padding="5dp"
             android:layout_margin="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
+
             <TextView
+                android:id="@+id/tv3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv3"
-                android:padding="5dp"
                 android:layout_margin="5dp"
-                android:textSize="20sp"
+                android:layout_weight="1"
+                android:padding="5dp"
                 android:text="Duration (minutes)"
-                android:textStyle="bold"
-                android:layout_weight="1"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
             <Spinner
+                android:id="@+id/no_min"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/no_min"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/l4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/l4"
-            android:padding="5dp"
             android:layout_margin="5dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/tv4"
-                android:padding="5dp"
-                android:layout_margin="5dp"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                android:text="Working days"
-                android:textStyle="bold"/>
-            <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/work_days">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Monday-Friday"
-                    android:id="@+id/radioButton"
-                    android:checked="true"/>
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Working days"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/work_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp">
 
                 <RadioButton
+                    android:id="@+id/radioButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Monday-Saturday"
-                    android:id="@+id/radioButton2" />
+                    android:checked="true"
+                    android:text="Monday-Friday" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monday-Saturday" />
             </RadioGroup>
 
 
         </LinearLayout>
+
         <Button
+            android:id="@+id/new_ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/new_ok"
-            android:text="OK"
             android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:gravity="center"
             android:padding="5dp"
-            android:textColor="#000000"
-            android:layout_margin="5dp"/>
+            android:text="OK"
+            android:textColor="#000000" />
 
     </LinearLayout>
 
