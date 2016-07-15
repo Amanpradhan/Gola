@@ -179,7 +179,7 @@ public class NewUser extends AppCompatActivity implements View.OnClickListener {
             bundle.putInt("MEREDIAN",meredian);
             userDB = new UserDB(context,"GolaDB",null,1);
             userDB.setFlag(1);
-            userDB.InsertUserData(user_name,user_sem);
+            userDB.InsertUserData(user_name,user_sem,duration_each_class,no_classes_daily);
             finish();
 
         }

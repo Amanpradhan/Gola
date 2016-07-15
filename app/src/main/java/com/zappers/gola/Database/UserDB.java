@@ -16,6 +16,9 @@ public class UserDB extends SQLiteOpenHelper {
     public static final String SEMESTER = "";
     public static final String Flag = "";
     public static final String ATTENDANCE = "";
+    public static final String Duration = "";
+    public static final String NO_Classes = "";
+    public static final String Start = "";
 
     public UserDB(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -28,7 +31,10 @@ public class UserDB extends SQLiteOpenHelper {
                 "USERNAME varchar," +
                 "SEMESTER varchar," +
                 "Flag Integer" +
-                "ATTENDANCE varchar,Primary Key(U_Id));");
+                "ATTENDANCE varchar,"+
+                "Duration varchar,"+
+                "NO_Classes varchar,"+
+                "Start varchar ,Primary Key(U_Id));");
     }
 
     @Override
@@ -36,12 +42,14 @@ public class UserDB extends SQLiteOpenHelper {
 
     }
 
-    public void InsertUserData(String u_name, Integer semester) {
+    public void InsertUserData(String u_name, Integer semester,Integer durtn,Integer num) {
         int id = 0;
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("USERNAME", u_name);
         contentValues.put("SEMESTER", semester);
+        contentValues.put("Duration",durtn);
+        contentValues.put("NO_Classes",num);
         db.update("GolaDB", contentValues, "id = ? ", new String[]{Integer.toString(id)});
     }
     public Cursor getUserData(){
