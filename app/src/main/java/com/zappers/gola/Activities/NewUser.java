@@ -1,7 +1,6 @@
 package com.zappers.gola.Activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +15,9 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.zappers.gola.R;
+import com.zappers.gola.Database.UserDB;
 import com.zappers.gola.Fragments.SemDialog;
+import com.zappers.gola.R;
 
 /**
  * Created by akriti on 13/7/16.
@@ -33,6 +33,7 @@ public class NewUser extends AppCompatActivity implements View.OnClickListener {
     public static int flag1 = 0, flag2 = 0, flag3 = 0, flag4 = 0, flag5 = 0, flag6 = 0;
     public static Context context;
     public static Bundle bundle;
+    public static UserDB userDB;
     //UI elements
     Spinner no_classes, hrs, min,merdn,no_min;
     EditText name, sem;
@@ -176,9 +177,9 @@ public class NewUser extends AppCompatActivity implements View.OnClickListener {
             bundle.putInt("TIMEHRS",start_hrs);
             bundle.putInt("TIMEMIN",start_min);
             bundle.putInt("MEREDIAN",meredian);
-            Intent intent = new Intent(this,MainActivity.class);
-            intent.putExtras(bundle);
-            startActivity(intent);
+            userDB = new UserDB(context,"GolaDB",null,1);
+            userDB.setFlag(1);
+            userDB.InsertUserData(user_name,user_sem);
             finish();
 
         }
