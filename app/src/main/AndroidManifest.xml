@@ -3,6 +3,10 @@
     package="com.zappers.gola">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <receiver android:name=".MyWakefulReceiver" />
 
     <application
         android:allowBackup="true"
@@ -29,23 +33,27 @@
 
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Details"
-            android:label="@string/app_name">
 
-        </activity>
-        <activity
-            android:name=".Subjects"
-            android:label="@string/app_name">
+        <service android:name=".Services.MyService" />
+        <receiver
+            android:name=".Models.BootReceiver"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
 
-        </activity>
         <activity
             android:name=".Activities.NewUser"
             android:label="@string/app_name">
+
         </activity>
         <activity
             android:name=".Activities.MarkAttendance"
             android:label="@string/app_name">
+
         </activity>
 
         <service android:name=".Services.MyService" />

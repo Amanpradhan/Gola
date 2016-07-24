@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zappers.gola.Database.UserDB;
 import com.zappers.gola.R;
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         // Start the thread
         t.start();
+        startService(new Intent(getBaseContext(), MyService.class));
 
     }
 
@@ -89,8 +92,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_check:
                 curr_details.setVisibility(View.VISIBLE);
                 userDB = new UserDB(context,"GolaDB",null,1);
-                cursor.moveToFirst();
                 cursor = userDB.getFlag();
+                //cursor.moveToFirst();
                 int flag = cursor.getShort(3);
                 if (flag==1){
                     cursor = userDB.getUserData();
@@ -104,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         exp.setImageResource(R.drawable.low);
                     }
                     else{
-                        exp.setImageResource(R.drawable.Wow);
+                        exp.setImageResource(R.drawable.wow);
                     }
                     Log.d("Gola","Display attendance");
                 }
@@ -139,6 +142,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         }
+    }
+    // Method to start the service
+    public void startService(View view) {
+        //for running service while phone is asleep
+        PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                "MyWakelockTag");
+        wakeLock.acquire();
+        startService(new Intent(getBaseContext(), MyService.class));
+        Toast.makeText(this, "Service Started", Toast.LENGTH_LONG).show();
+    }
+
+    // Method to stop the service
+    public void stopService(View view) {
+        stopService(new Intent(getBaseContext(), MyService.class));
     }
 
 
